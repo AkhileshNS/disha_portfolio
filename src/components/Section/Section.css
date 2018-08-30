@@ -1,0 +1,63 @@
+
+.Section {
+    width: 768px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 45px;
+    padding-bottom: 60px;
+    margin-top: -2px;
+    color: #202020;
+}
+
+.Sectiontitle {
+    font-size: 2.4em;
+    margin: 0px 8px;
+    font-weight: bold;
+}
+
+.Sectionsubtext {
+    font-size: 1.6em;
+    margin: 16px 8px 0px;
+}
+
+.Sectionimg {
+    width: 30%;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 8px;
+}
+
+.Sectionbtn {
+    padding: 9px;
+    border: 1px solid black;
+    font-size: 1.2em;
+    background-color: black;
+    color: white;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.Sectionbtn:hover {
+    box-shadow: 0px 0px 1px 1px gray;
+}
+
+@media only screen and (max-width: 768px) {
+    .Section {
+        width: 100%;
+    }
+
+    .Sectionimg {
+        width: 48%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .Section {
+        width: 100%;
+    }
+
+    .Sectionimg {
+        width: 96%;
+    }
+}
