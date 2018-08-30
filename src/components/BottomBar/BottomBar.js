@@ -1,5 +1,6 @@
 //External Libraries
 import React from 'react';
+import Radium from 'radium';
 
 //Internal Libraries
 import InstaImg from '../../assets/insta_btn.svg';
@@ -14,7 +15,14 @@ let InstaBtnStyle = {
     height: '30px',
     marginTop: '7px',
     marginBottom: '4px',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    ':hover': {
+        height: '32px',
+        marginTop: '6px',
+        marginBottom: '3px',
+        transform: 'rotate(360deg)',
+        transition: 'all 0.5s ease'
+    }
 };
 
 const BottomBar = () => {
@@ -23,4 +31,4 @@ const BottomBar = () => {
     </div>;
 }
 
-export default BottomBar;
+export default Radium(BottomBar);

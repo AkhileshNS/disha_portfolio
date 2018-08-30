@@ -9,6 +9,7 @@ import './Section.css';
 const strtojsx = require('react-string-replace');
 
 let cssClassName = 'Section';
+let SectionStyle = {};
 
 const Section = (props) => {
 
@@ -25,9 +26,8 @@ const Section = (props) => {
     }
 
     if (props.images!=null) {
-        let i = 0;
-        for (let path of props.images) {
-            images.push(<img key={i++} src={path} alt="Not Available" className={cssClassName+'img'}/>);
+        for (let i in props.images) {
+            images.push(<img key={i} src={props.images[i]} alt="Not Available" className={cssClassName+'img'}/>);
         }
         gallery =  <Fragment><br /><br />{images}<br /><br /></Fragment>;
     }
@@ -41,7 +41,7 @@ const Section = (props) => {
     }
 
     return <div style={{backgroundColor: bgcolor, width: '100%'}}> 
-        <div className={cssClassName}>
+        <div className={cssClassName} style={SectionStyle}>
             {title}
             {subtext}
             {gallery}
