@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router , Switch, Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import AppBar from './components/AppBar/AppBar';
+import BottomBar from './components/BottomBar/BottomBar';
 
 //Internal Libraries
 
@@ -30,6 +31,7 @@ class App extends Component {
           <Switch>
             <Route path='/' component={Home} exact/>
           </Switch>
+          <BottomBar />
         </div>
       </Router>
     );

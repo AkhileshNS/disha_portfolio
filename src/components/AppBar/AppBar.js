@@ -14,8 +14,7 @@ let cssClassName = 'AppBar';
 
 let LinkStyle = {
     fontSize: '1.6em',
-    color: 'black',
-    backgroundColor: '#F7F7F7',
+    color: 'gray',
     textDecoration: 'none',
     marginLeft: '8px',
     marginRight: '8px',
@@ -26,8 +25,7 @@ let LinkStyle = {
         backgroundColor: '#d3d3d3'
     },
     ':active': {
-        backgroundColor: 'black',
-        color: '#F7F7F7'
+        color: '#202020'
     }
 };
 
@@ -40,8 +38,7 @@ class AppBar extends Component {
         for (let link of this.props.links) {
             let Style = {...LinkStyle};
             if (this.props.location.pathname===link.to) {
-                Style.backgroundColor = 'black';
-                Style.color = '#F7F7F7';
+                Style.color = '#202020';
                 Style[':hover'] = {...Style[':active']};
             }
             links.push(<Link to={link.to} key={link.to} style={Style}>{link.title}</Link>);
