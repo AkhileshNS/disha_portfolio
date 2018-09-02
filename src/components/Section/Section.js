@@ -4,6 +4,7 @@ import React, {Fragment} from 'react';
 
 //Internal Libraries
 import './Section.css';
+import Gallery from '../Gallery/Gallery';
 
 //Custom Imports
 const strtojsx = require('react-string-replace');
@@ -26,10 +27,12 @@ const Section = (props) => {
     }
 
     if (props.images!=null) {
-        for (let i in props.images) {
-            images.push(<img key={i} src={props.images[i]} alt="Not Available" className={cssClassName+'img'}/>);
-        }
-        gallery =  <Fragment><br /><br />{images}<br /><br /></Fragment>;
+        gallery = <Fragment><br /><br />
+            <Gallery 
+                images={props.images} 
+                Style={{width: 'calc(33.3% - 8px)', paddingTop: '8px', paddingLeft: '4px', paddingRight: '4px'}}
+            />
+        <br /><br /></Fragment>;
     }
 
     if (props.button!=null && props.click!=null) {

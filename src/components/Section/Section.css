@@ -21,13 +21,6 @@
     margin: 16px 8px 0px;
 }
 
-.Sectionimg {
-    width: 30%;
-    margin-left: 4px;
-    margin-right: 4px;
-    margin-top: 8px;
-}
-
 .Sectionbtn {
     padding: 9px;
     border: 1px solid black;
@@ -45,19 +38,5 @@
 @media only screen and (max-width: 768px) {
     .Section {
         width: 100%;
-    }
-
-    .Sectionimg {
-        width: 48%;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .Section {
-        width: 100%;
-    }
-
-    .Sectionimg {
-        width: 96%;
     }
 }

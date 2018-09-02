@@ -1,0 +1,19 @@
+.Gallery {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Gallerypic {
+    width: calc(20% - 2px);
+    padding: 1px;
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .Gallerypic {
+        width: calc(33.33% - 2px);
+    }
+}
