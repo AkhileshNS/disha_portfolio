@@ -1,13 +1,14 @@
 //External Libraries
-import React from 'react';
+import React, {Component} from 'react';
 import Radium from 'radium';
+import {withRouter} from 'react-router-dom';
 
 //Internal Libraries
 import InstaImg from '../../assets/insta_btn.svg';
 
 let BottomBarStyle = {
     width: '100%',
-    backgroundColor: '#F7F7F7'
+    backgroundColor: '#F0F0F0'
 };
 
 let InstaBtnStyle = {
@@ -25,10 +26,19 @@ let InstaBtnStyle = {
     }
 };
 
-const BottomBar = () => {
-    return <div style={BottomBarStyle}>
-        <img src={InstaImg} alt="Instagram" style={InstaBtnStyle} onClick={() => window.open('https://www.instagram.com/dishakhanted/?hl=en')}/>
-    </div>;
+class BottomBar extends Component {
+    render() {
+
+        let path = this.props.location.pathname;
+
+        if (path==='/') {
+            BottomBarStyle['backgroundColor'] = '#F7F7F7';
+        }
+
+        return <div style={BottomBarStyle}>
+            <img src={InstaImg} alt="Instagram" style={InstaBtnStyle} onClick={() => window.open('https://www.instagram.com/dishakhanted/?hl=en')}/>
+        </div>;
+    }
 }
 
-export default Radium(BottomBar);
+export default withRouter(Radium(BottomBar));

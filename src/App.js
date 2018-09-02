@@ -4,14 +4,15 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router , Switch, Route } from 'react-router-dom';
 
 //Internal Libraries
+import AppBar from './components/AppBar/AppBar';
+import BottomBar from './components/BottomBar/BottomBar';
 
 //Page Components
 import Home from './pages/Home/Home';
-import AppBar from './components/AppBar/AppBar';
-import BottomBar from './components/BottomBar/BottomBar';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 import ShirtFlirt from './pages/ShirtFlirt/ShirtFlirt';
+import ShowCase from './pages/ShowCase/ShowCase';
 
 //Internal Libraries
 
@@ -40,6 +41,7 @@ class App extends Component {
             <Route path='/portfolio' component={Portfolio} exact/>
             <Route path='/contact' component={Contact} exact/>
             <Route path='/shirtflirt' component={ShirtFlirt} exact/>
+            <Route path='/portfolio/:category' component={ShowCase} exact/>
           </Switch>
           <BottomBar />
         </div>

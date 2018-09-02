@@ -20,7 +20,7 @@ class ShirtFlirt extends Component {
 
     render() {
         return <div className={cssClassName}>
-            <Gallery images={dummys} click={this.openLightBox}/>
+            <Gallery images={dummys}/>
         </div>;
     }
 
