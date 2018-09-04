@@ -3,6 +3,7 @@
 import React, {Fragment} from 'react';
 
 //Internal Libraries
+import '../../global.css'
 import './Section.css';
 import Gallery from '../Gallery/Gallery';
 
@@ -35,7 +36,7 @@ const Section = (props) => {
     }
 
     if (props.button!=null && props.click!=null) {
-        button = <button className={cssClassName+"btn"} onClick={props.click}>{props.button}</button>
+        button = <button className="button" onClick={props.click}>{props.button}</button>
     }
 
     if (props.darken){

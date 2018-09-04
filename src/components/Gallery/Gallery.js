@@ -30,9 +30,9 @@ class Gallery extends Component {
     render() {
 
         let layout = [];
-        let dummys = this.props.images;
+        let dummys = this.props.src;
 
-        for (let i in this.props.images) {
+        for (let i in this.props.thumbnails) {
             let Style = {};
 
             if (this.props.Style!=null) {
@@ -40,7 +40,7 @@ class Gallery extends Component {
             }
 
             layout.push(<img 
-                src={this.props.images[i]} 
+                src={this.props.thumbnails[i]} 
                 alt="Unavailable" 
                 key={i} 
                 className={cssClassName+'pic'} 
