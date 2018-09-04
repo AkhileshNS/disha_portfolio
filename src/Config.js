@@ -21,9 +21,27 @@ let shirtflirt = {
     src: [dummy,dummy,dummy,dummy,dummy,dummy,dummy,dummy,dummy,dummy,dummy,dummy]
 };
 
+let shirtflirtdemo = {
+    thumbnails: [dummy,dummy,dummy],
+    src: [dummy,dummy,dummy]
+}
+
+let portfoliodemo = {
+    thumbnails: [dummy,dummy,dummy,dummy,dummy,dummy,dummy,dummy,dummy],
+    src: [dummy,dummy,dummy,dummy,dummy,dummy,dummy,dummy,dummy]
+}
+
+let clients = {
+    thumbnails: [dummy,dummy,dummy],
+    src: [dummy,dummy,dummy]
+}
+
 export {
     blackandwhite,
     main,
     brandcampaign,
-    shirtflirt
+    shirtflirt,
+    shirtflirtdemo,
+    portfoliodemo,
+    clients
 }

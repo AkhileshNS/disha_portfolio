@@ -29,7 +29,8 @@ const Section = (props) => {
     if (props.images!=null) {
         gallery = <Fragment><br /><br />
             <Gallery 
-                images={props.images} 
+                src={props.images.src}
+                thumbnails={props.images.thumbnails} 
                 Style={{width: 'calc(33.3% - 8px)', paddingTop: '8px', paddingLeft: '4px', paddingRight: '4px'}}
             />
         <br /><br /></Fragment>;
