@@ -1,0 +1,47 @@
+.Form {
+    width: 100%;
+    background-color: #F0F0F0;
+    text-align: center;
+    padding-bottom: 35px;   
+}
+
+.Formtitle {
+    font-size: 2.4em;
+    margin: 0px 8px;
+    font-weight: bold;
+    padding: 35px 0px;
+}
+
+.Forminput {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6em;
+    padding: 6px;
+    background-color: #F0F0F0;
+    border: none;
+    border-bottom: 1.5px solid gray;
+    margin: 16px;
+    width: 250px;
+    outline: none;
+}
+
+.Formtextarea {
+    font-family: 'Oswald', sans-serif;;
+    font-size: 1.6em;
+    padding: 6px;
+    background-color: #F0F0F0;
+    border: none;
+    border-bottom: 1.5px solid gray;
+    margin: 16px;
+    width: 547px;
+    outline: none;
+}
+
+.Forminput:hover, .Forminput:focus, .Formtextarea:hover, .Formtextarea:focus  {
+    border-bottom: 1.5px solid black;
+}
+
+@media only screen and (max-width: 768px) {
+    .Forminput, .Formtextarea {
+        width: 80%; 
+    }
+}

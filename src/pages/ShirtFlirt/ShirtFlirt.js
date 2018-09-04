@@ -18,6 +18,10 @@ for (let i=0;i<30;i++) {
 
 class ShirtFlirt extends Component {
 
+    componentDidMount() {
+        window.scrollTo(0,0);
+    }
+
     render() {
         return <div className={cssClassName}>
             <Gallery images={dummys}/>

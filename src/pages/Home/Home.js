@@ -16,7 +16,7 @@ let lorem_ipsom = `Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n\n 
 class Home extends Component {
 
     log = () => {
-        console.log('Button Clicked!');
+        this.props.history.replace('/shirtflirt');
     }
 
     render() {

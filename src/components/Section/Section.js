@@ -14,8 +14,7 @@ let SectionStyle = {};
 
 const Section = (props) => {
 
-    let title, subtext, gallery, button, bgcolor = '#F7F7F7';
-    let images = [];
+    let title, subtext, gallery, button,icon,contactdetails,layout,bgcolor = '#F7F7F7';
 
     if (props.title!=null) {
         title = <p className={cssClassName+"title"}>{props.title}</p>
@@ -43,12 +42,26 @@ const Section = (props) => {
         bgcolor = '#F0F0F0';
     }
 
+    if (props.icon!=null) {
+        icon = <div className={cssClassName + 'container'}>
+            <img src={props.icon} alt="Unavailable" className={cssClassName+'img'}/>
+        </div>;
+        contactdetails = <div className={cssClassName + 'contact'}>
+            <p className={cssClassName+'title'} style={{marginTop: '25px'}}>{props.title}</p>
+            <p className={cssClassName+'desc'}>{props.subtext}</p>
+        </div>;
+        title = null;
+        subtext = null;
+        layout = <div className={cssClassName+'about'}>{icon}{contactdetails}</div>
+    }
+
     return <div style={{backgroundColor: bgcolor, width: '100%'}}> 
         <div className={cssClassName} style={SectionStyle}>
             {title}
             {subtext}
             {gallery}
             {button}
+            {layout}
         </div>
     </div>;
 }
