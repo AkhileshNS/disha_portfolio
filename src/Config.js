@@ -30,8 +30,8 @@ for (let profile of importProfiles) {
             pro = 'portfolio';
         }
         try {
-            exportProfiles[profile].thumbnails.push(require(`${__dirname}/assets/thumbnails/${pro}/${pro}_${j}.jpg`));
-            exportProfiles[profile].src.push(require(`${__dirname}/assets/images/${pro}/${pro}_${j}.jpg`));
+            exportProfiles[profile].thumbnails.push(require(`./assets/thumbnails/${pro}/${pro}_${j}.jpg`));
+            exportProfiles[profile].src.push(require(`./assets/images/${pro}/${pro}_${j}.jpg`));
         } catch(error) {
             break;
         }
