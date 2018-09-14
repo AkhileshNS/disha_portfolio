@@ -7,7 +7,7 @@ import '../../global.css';
 import './Home.css';
 import HomeBg from '../../assets/Home_Bg.png';
 import Section from '../../components/Section/Section';
-import {shirtflirtdemo,portfoliodemo,clients}from '../../Config';
+import config from '../../Config';
 
 let cssClassName = 'Home';
 
@@ -26,13 +26,13 @@ class Home extends Component {
             <Section
                 title="Shirt Flirt" 
                 subtext={lorem_ipsom} 
-                images={shirtflirtdemo}
+                images={config.shirtflirtdemo}
                 button="See More"
                 click={() => this.log()}
             />
             <Section
                 title="Portfolio"
-                images={portfoliodemo}
+                images={config.portfoliodemo}
                 darken={true}
             />
             <Section
@@ -41,7 +41,7 @@ class Home extends Component {
             />
             <Section
                 title="Clients"
-                images={clients}
+                images={config.clients}
                 darken={true}
             />
         </div>;

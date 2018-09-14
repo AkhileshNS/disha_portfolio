@@ -7,11 +7,11 @@ import './ShowCase.css';
 import Gallery from '../../components/Gallery/Gallery';
 
 // Configuration Images
-import {blackandwhite, main, brandcampaign} from '../../Config';
+import config from '../../Config';
 
 let cssClassName = 'ShowCase';
 
-let images = {blackandwhite,main,brandcampaign};
+let images = {black_and_white: config.black_and_white, main: config.main, brandcampaign: config.brandcampaign};
 
 class ShowCase extends Component {
 

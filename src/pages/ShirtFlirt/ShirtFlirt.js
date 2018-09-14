@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 import './ShirtFlirt.css';
 import '../../global.css';
 import Gallery from '../../components/Gallery/Gallery';
-import {shirtflirt} from '../../Config';
+import config from '../../Config';
 
 let cssClassName = 'Shirtflirt';
 
@@ -18,7 +18,7 @@ class ShirtFlirt extends Component {
 
     render() {
         return <div className={cssClassName}>
-            <Gallery src={shirtflirt.src} thumbnails={shirtflirt.thumbnails}/>
+            <Gallery src={config.shirtflirt.src} thumbnails={config.shirtflirt.thumbnails}/>
         </div>;
     }
 

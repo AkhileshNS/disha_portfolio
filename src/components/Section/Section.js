@@ -30,8 +30,8 @@ const Section = (props) => {
         gallery = <Fragment><br /><br />
             <Gallery 
                 src={props.images.src}
-                thumbnails={props.images.thumbnails} 
-                Style={{width: 'calc(33.3% - 8px)', paddingTop: '8px', paddingLeft: '4px', paddingRight: '4px'}}
+                thumbnails={props.images.thumbnails}
+                fromSection={true}
             />
         <br /><br /></Fragment>;
     }

@@ -2,10 +2,11 @@
 // External Libraries
 import React, {Component} from 'react';
 import Lightbox from 'react-image-lightbox';
+import windowSize from 'react-window-size';
 
 // Internal Libraries
-import './Gallery.css';
 import 'react-image-lightbox/style.css';
+import './Gallery.css';
 
 let cssClassName = "Gallery";
 
@@ -32,6 +33,20 @@ class Gallery extends Component {
         let layout = [];
         let dummys = this.props.src;
 
+        let check = 5;
+        let mw = "20%";
+
+        if (this.props.windowWidth<=768 || this.props.fromSection) {
+            check = 3;
+            mw = "33.33%";
+        }
+
+        let j = 0;
+
+        for (let i=0;i<check;i++) {
+            layout.push([]);
+        }
+
         for (let i in this.props.thumbnails) {
             let Style = {};
 
@@ -39,7 +54,11 @@ class Gallery extends Component {
                 Style = {...this.props.Style};
             }
 
-            layout.push(<img 
+            if (j===check) {
+                j = 0;
+            }
+
+            layout[j++].push(<img 
                 src={this.props.thumbnails[i]} 
                 alt="Unavailable" 
                 key={i} 
@@ -48,6 +67,16 @@ class Gallery extends Component {
                 onClick={() => this.openLightBox(i)}
                 style={Style}
             />);
+        }
+
+        console.log(layout.length);
+
+        let gallery = [];
+
+        for (let i in layout) {
+            gallery.push(<div key={i} style={{maxWidth: mw}} className={cssClassName+'column'}>
+                {layout[i]}
+            </div>);
         }
 
         return <div className={cssClassName}>
@@ -70,12 +99,10 @@ class Gallery extends Component {
                 }
             />
             )}
-            <div style={{width: '100%', display: 'inline-block'}}>
-                {layout}
-            </div>
+            {gallery}
         </div>;
 
     }
 }
 
-export default Gallery;
+export default windowSize(Gallery);

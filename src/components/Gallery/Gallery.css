@@ -1,19 +1,18 @@
 .Gallery {
+    display: flex;
+    flex-wrap: wrap;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.Gallerypic {
-    width: calc(20% - 2px);
-    padding: 1px;
-    display: block;
-    float: left;
+.Gallerycolumn {
+    flex: 1;
     cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
-    .Gallerypic {
-        width: calc(33.33% - 2px);
-    }
+.Gallerypic {
+    width: 99%;
+    margin: 1px;
+    vertical-align: middle;
 }

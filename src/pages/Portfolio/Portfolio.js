@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 import './Portfolio.css';
 import '../../global.css';
 import Category from '../../components/Category/Category';
-import dummy from '../../assets/dummy_img.jpg';
+import Config from '../../Config';
 
 let lorem_ipsom = `Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n\n sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 let reversed = [false,true,false];
@@ -57,8 +57,8 @@ class Portfolio extends Component {
                 title="Category Title"
                 subtext={lorem_ipsom}
                 button="See More"
-                click={() => this.loadCategory('blackandwhite')}
-                image={dummy}
+                click={() => this.loadCategory('black_and_white')}
+                image={Config.category.thumbnails[0]}
                 reverse={reversed[0]}
                 width={this.state.width}
             />
@@ -67,7 +67,7 @@ class Portfolio extends Component {
                 subtext={lorem_ipsom}
                 button="See More"
                 click={() => this.loadCategory('main')}
-                image={dummy}
+                image={Config.category.thumbnails[1]}
                 reverse={reversed[1]}
                 darken={true}
                 width={this.state.width}                
@@ -77,7 +77,7 @@ class Portfolio extends Component {
                 subtext={lorem_ipsom}
                 button="See More"
                 click={() => this.loadCategory('brandcampaign')}
-                image={dummy}
+                image={Config.category.thumbnails[2]}
                 reverse={reversed[2]}
                 width={this.state.width}
             />
