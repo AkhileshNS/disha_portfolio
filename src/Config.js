@@ -31,7 +31,7 @@ for (let profile of importProfiles) {
         }
         try {
             exportProfiles[profile].thumbnails.push(require(`./assets/thumbnails/${pro}/${pro}_${j}.jpg`));
-            exportProfiles[profile].src.push(require(`./assets/images/${pro}/${pro}_${j}.jpg`));
+            exportProfiles[profile].src.push(`https://firebasestorage.googleapis.com/v0/b/shoppinglistplusplus-nsa.appspot.com/o/public%2F${pro}%2F${pro}_${j}.jpg?alt=media&token=d1d322f5-dcb0-4151-adbd-1655d6663026`);
         } catch(error) {
             break;
         }
