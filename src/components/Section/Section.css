@@ -42,6 +42,7 @@
     font-size: 1.6em;
     margin: 16px 8px 0px;
     display: inline-block;
+    width: 275px;
 }
 
 .Sectionabout {
@@ -65,5 +66,9 @@
 
     .Sectionimg {
         margin-right: 0;
+    }
+
+    .Sectiondesc {
+        width: 80%;
     }
 }

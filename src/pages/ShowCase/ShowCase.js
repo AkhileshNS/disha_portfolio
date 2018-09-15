@@ -25,6 +25,7 @@ class ShowCase extends Component {
             <Gallery 
                 thumbnails={images[this.props.match.params.category].thumbnails} 
                 src={images[this.props.match.params.category].src}
+                LightBox
             />
         </div>
 

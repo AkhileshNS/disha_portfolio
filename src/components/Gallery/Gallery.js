@@ -22,10 +22,12 @@ class Gallery extends Component {
     }
 
     openLightBox = (index) => {
-        this.setState({isBackdropOpen: true});
-        firebase.storage().ref(this.props.src[index]).getDownloadURL()
-        .then(url => this.setState({mainSrc: url, isImageOpen: true}))
-        .catch(err => console.log(err));
+        if (this.props.LightBox===true){
+            this.setState({isBackdropOpen: true});
+            firebase.storage().ref(this.props.src[index]).getDownloadURL()
+            .then(url => this.setState({mainSrc: url, isImageOpen: true}))
+            .catch(err => console.log(err));
+        }
     }
 
     closeLightBox = () => {
@@ -36,13 +38,13 @@ class Gallery extends Component {
 
         let layout = [];
 
-        let check = 5;
-        let mw = "20%";
+        let check = 3;
+        let mw = "33.33%";
 
-        if (this.props.windowWidth<=768 || this.props.fromSection) {
+        /* if (this.props.windowWidth<=768 || this.props.fromSection) {
             check = 3;
             mw = "33.33%";
-        }
+        } */
 
         let j = 0;
 
@@ -59,6 +61,10 @@ class Gallery extends Component {
 
             if (j===check) {
                 j = 0;
+            }
+
+            if (this.props.LightBox===true) {
+                Style['cursor'] = 'pointer';
             }
 
             layout[j++].push(<img 
@@ -81,11 +87,13 @@ class Gallery extends Component {
         }
 
         let lightbox = 'block';
+        let closebtn = 'block';
         let loader = 'inline-block';
         let backdrop = 'block';
 
         if (this.state.isImageOpen===false) {
             lightbox = 'none';
+            closebtn = 'none';
         }
 
         if (this.state.isBackdropOpen===false) {
@@ -96,7 +104,8 @@ class Gallery extends Component {
         return <div className={cssClassName}>
             <img src={this.state.mainSrc} alt="Unavailable" className={cssClassName + 'img'} style={{display: lightbox}}/>
             <div className="lds-hourglass" style={{display: loader}}/>
-            <div className={cssClassName + 'backdrop'} onClick={this.closeLightBox} style={{display: backdrop}}/>
+            <button className={cssClassName+'closebtn'} style={{display: closebtn}} onClick={this.closeLightBox}>x</button>
+            <div className={cssClassName + 'backdrop'} style={{display: backdrop}}/>
             {gallery}
         </div>;
 

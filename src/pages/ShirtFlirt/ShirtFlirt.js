@@ -18,7 +18,7 @@ class ShirtFlirt extends Component {
 
     render() {
         return <div className={cssClassName}>
-            <Gallery src={config.shirtflirt.src} thumbnails={config.shirtflirt.thumbnails}/>
+            <Gallery src={config.shirtflirt.src} thumbnails={config.shirtflirt.thumbnails} LightBox/>
         </div>;
     }
 
