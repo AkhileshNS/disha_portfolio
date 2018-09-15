@@ -93,12 +93,12 @@ class Gallery extends Component {
 
         if (this.state.isImageOpen===false) {
             lightbox = 'none';
-            closebtn = 'none';
         }
 
         if (this.state.isBackdropOpen===false) {
             loader = 'none';
             backdrop = 'none';
+            closebtn = 'none';
         }
 
         return <div className={cssClassName}>
