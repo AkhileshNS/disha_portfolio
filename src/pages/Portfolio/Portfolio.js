@@ -57,7 +57,7 @@ class Portfolio extends Component {
                 title="Category Title"
                 subtext={lorem_ipsom}
                 button="See More"
-                click={() => this.loadCategory('black_and_white')}
+                click={() => this.loadCategory('main')}
                 image={Config.category.thumbnails[0]}
                 reverse={reversed[0]}
                 width={this.state.width}
@@ -66,7 +66,7 @@ class Portfolio extends Component {
                 title="Category Title"
                 subtext={lorem_ipsom}
                 button="See More"
-                click={() => this.loadCategory('main')}
+                click={() => this.loadCategory('black_and_white')}
                 image={Config.category.thumbnails[1]}
                 reverse={reversed[1]}
                 darken={true}

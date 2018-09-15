@@ -1,11 +1,9 @@
 
 // External Libraries
 import React, {Component} from 'react';
-import Lightbox from 'react-image-lightbox';
 import windowSize from 'react-window-size';
 
 // Internal Libraries
-import 'react-image-lightbox/style.css';
 import './Gallery.css';
 import firebase from '../../firebase';
 
@@ -17,36 +15,26 @@ class Gallery extends Component {
         super(props);
 
         this.state = {
-            isOpen: false,
-            photoIndex: 0,
-            images: []
+            isImageOpen: false,
+            isBackdropOpen: false,
+            mainSrc: ''
         };
     }
 
     openLightBox = (index) => {
-        this.setState({
-            photoIndex: index,
-            isOpen: true
-        });
+        this.setState({isBackdropOpen: true});
+        firebase.storage().ref(this.props.src[index]).getDownloadURL()
+        .then(url => this.setState({mainSrc: url, isImageOpen: true}))
+        .catch(err => console.log(err));
     }
 
-    componentDidMount() {
-        let paths = this.props.src;
-        for (let path of paths) {
-            let ref = firebase.storage().ref(path);
-            ref.getDownloadURL().then(url => {
-                let images = [...this.state.images, url];
-                this.setState({
-                    images
-                });
-            }).catch(err => console.log(err));
-        }
+    closeLightBox = () => {
+        this.setState({isImageOpen: false, isBackdropOpen: false});
     }
 
     render() {
 
         let layout = [];
-        let dummys = this.state.images;
 
         let check = 5;
         let mw = "20%";
@@ -92,26 +80,23 @@ class Gallery extends Component {
             </div>);
         }
 
+        let lightbox = 'block';
+        let loader = 'inline-block';
+        let backdrop = 'block';
+
+        if (this.state.isImageOpen===false) {
+            lightbox = 'none';
+        }
+
+        if (this.state.isBackdropOpen===false) {
+            loader = 'none';
+            backdrop = 'none';
+        }
+
         return <div className={cssClassName}>
-            {this.state.isOpen && (
-            <Lightbox
-                imagePadding={50}
-                mainSrc={dummys[this.state.photoIndex]}
-                nextSrc={dummys[(this.state.photoIndex + 1) % dummys.length]}
-                prevSrc={dummys[(this.state.photoIndex + dummys.length - 1) % dummys.length]}
-                onCloseRequest={() => this.setState({ isOpen: false })}
-                onMovePrevRequest={() =>
-                this.setState({
-                    photoIndex: (this.state.photoIndex + dummys.length - 1) % dummys.length,
-                })
-                }
-                onMoveNextRequest={() =>
-                this.setState({
-                    photoIndex: (this.state.photoIndex + 1) % dummys.length,
-                })
-                }
-            />
-            )}
+            <img src={this.state.mainSrc} alt="Unavailable" className={cssClassName + 'img'} style={{display: lightbox}}/>
+            <div className="lds-hourglass" style={{display: loader}}/>
+            <div className={cssClassName + 'backdrop'} onClick={this.closeLightBox} style={{display: backdrop}}/>
             {gallery}
         </div>;
 
