@@ -7,6 +7,7 @@ import windowSize from 'react-window-size';
 // Internal Libraries
 import 'react-image-lightbox/style.css';
 import './Gallery.css';
+import firebase from '../../firebase';
 
 let cssClassName = "Gallery";
 
@@ -17,7 +18,8 @@ class Gallery extends Component {
 
         this.state = {
             isOpen: false,
-            photoIndex: 0
+            photoIndex: 0,
+            images: []
         };
     }
 
@@ -28,10 +30,23 @@ class Gallery extends Component {
         });
     }
 
+    componentDidMount() {
+        let paths = this.props.src;
+        for (let path of paths) {
+            let ref = firebase.storage().ref(path);
+            ref.getDownloadURL().then(url => {
+                let images = [...this.state.images, url];
+                this.setState({
+                    images
+                });
+            }).catch(err => console.log(err));
+        }
+    }
+
     render() {
 
         let layout = [];
-        let dummys = this.props.src;
+        let dummys = this.state.images;
 
         let check = 5;
         let mw = "20%";
@@ -68,8 +83,6 @@ class Gallery extends Component {
                 style={Style}
             />);
         }
-
-        console.log(layout.length);
 
         let gallery = [];
 
