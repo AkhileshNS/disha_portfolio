@@ -11,7 +11,20 @@ import config from '../../Config';
 
 let cssClassName = 'ShowCase';
 
-let images = {black_and_white: config.black_and_white, main: config.main, brandcampaign: config.brandcampaign};
+let images = {
+    black_and_white: {
+        link: config.black_and_white, 
+        last: '2'
+    }, 
+    main: {
+        link: config.main, 
+        last: '12'
+    },
+    brandcampaign: {
+        link: config.brandcampaign, 
+        last: '01'
+    }
+};
 
 class ShowCase extends Component {
 
@@ -23,8 +36,9 @@ class ShowCase extends Component {
 
         return <div className={cssClassName}>
             <Gallery 
-                thumbnails={images[this.props.match.params.category].thumbnails} 
-                src={images[this.props.match.params.category].src}
+                thumbnails={images[this.props.match.params.category].link.thumbnails} 
+                src={images[this.props.match.params.category].link.src}
+                last={images[this.props.match.params.category].last}
                 LightBox
             />
         </div>

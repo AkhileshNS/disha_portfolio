@@ -47,6 +47,7 @@ class Gallery extends Component {
         } */
 
         let j = 0;
+        let k = 0;
 
         for (let i=0;i<check;i++) {
             layout.push([]);
@@ -61,6 +62,12 @@ class Gallery extends Component {
 
             if (j===check) {
                 j = 0;
+            }
+
+            if (this.props.last!=null){
+                if (i>((this.props.thumbnails.length-1) - this.props.last.length)) {
+                    j = (parseInt(this.props.last[k++],10) % 3);
+                }
             }
 
             if (this.props.LightBox===true) {
