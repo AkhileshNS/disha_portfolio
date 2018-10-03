@@ -74,15 +74,29 @@ class Gallery extends Component {
                 Style['cursor'] = 'pointer';
             }
 
-            layout[j++].push(<img 
-                src={this.props.thumbnails[i]} 
-                alt="Unavailable" 
-                key={i} 
-                className={cssClassName+'pic'} 
-                border="0"
-                onClick={() => this.openLightBox(i)}
-                style={Style}
-            />);
+            if ('currGroup' in this.props) {
+                if (this.props.keys[i]===this.props.currGroup){
+                    layout[j++].push(<img 
+                        src={this.props.thumbnails[i]} 
+                        alt="Unavailable" 
+                        key={i} 
+                        className={cssClassName+'pic'} 
+                        border="0"
+                        onClick={() => this.openLightBox(i)}
+                        style={Style}
+                    />);
+                }
+            } else {
+                layout[j++].push(<img 
+                    src={this.props.thumbnails[i]} 
+                    alt="Unavailable" 
+                    key={i} 
+                    className={cssClassName+'pic'} 
+                    border="0"
+                    onClick={() => this.openLightBox(i)}
+                    style={Style}
+                />);
+            }
         }
 
         let gallery = [];

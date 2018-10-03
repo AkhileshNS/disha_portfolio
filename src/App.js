@@ -11,8 +11,8 @@ import BottomBar from './components/BottomBar/BottomBar';
 import Home from './pages/Home/Home';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
-import ShirtFlirt from './pages/ShirtFlirt/ShirtFlirt';
 import ShowCase from './pages/ShowCase/ShowCase';
+import About from './pages/About/About';
 
 //Internal Libraries
 
@@ -23,8 +23,8 @@ let links = [{
   to: '/portfolio',
   title: 'Portfolio'
 },{
-  to: '/shirtflirt',
-  title: 'Shirt Flirt'
+  to: '/about',
+  title: 'About'
 },{
   to: '/contact',
   title: 'Contact'
@@ -40,7 +40,7 @@ class App extends Component {
             <Route path='/' component={Home} exact/>
             <Route path='/portfolio' component={Portfolio} exact/>
             <Route path='/contact' component={Contact} exact/>
-            <Route path='/shirtflirt' component={ShirtFlirt} exact/>
+            <Route path='/about' component={About} exact/>
             <Route path='/portfolio/:category' component={ShowCase} exact/>
           </Switch>
           <BottomBar />

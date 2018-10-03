@@ -2,34 +2,38 @@
 const importProfiles = [
     { 
         name: 'black_and_white',
-        conf: ['1-n']
+        conf: [1]
     },{ 
         name: 'main',
-        conf: ['1-n'] 
+        conf: [1,2,3,4,5,6,7,8,9,10,11] 
     },{ 
         name: 'brandcampaign',
-        conf: ['1-n'] 
+        conf: [1] 
     },{ 
         name: 'shirtflirt',
-        conf: ['1-n']
+        conf: [1]
     }
 ];
 
 const exportProfiles = {};
 
-const displayProfiles = ['shirtflirtdemo','portfoliodemo','clients','category'];
+const displayProfiles = ['shirtflirtdemo','portfoliodemo','portraits','category'];
 const displayValues = [{
     name: ['shirtflirt','shirtflirt','shirtflirt'], 
+    keys: [1,1,1],
     no: [1,2,3]
 },{
-    name: ['main','main','main','main','main','main','main','main','main'], 
-    no: [8,24,39,47,61,70,84,99,112]
+    name: ['main','main','main','main','main','main','main','main','main'],
+    keys: [1,2,3,4,5,6,7,8,9], 
+    no: [1,1,1,1,1,1,1,1,1]
 },{
-    name: ['brandcampaign','brandcampaign','brandcampaign'], 
-    no: [6,16,24]
+    name: ['black_and_white','black_and_white','black_and_white','black_and_white','black_and_white','black_and_white','black_and_white','black_and_white','black_and_white'], 
+    keys: [1,1,1,1,1,1,1,1,1],
+    no: [10,2,13,4,5,6,7,8,9]
 },{
-    name: ['main','black_and_white','brandcampaign'],
-    no: [3,28,87]
+    name: ['main','black_and_white','shirtflirt'],
+    keys: [1,1,1],
+    no: [3,28,2]
 }];
 
 for (let profile of importProfiles) {
@@ -40,30 +44,21 @@ for (let profile of importProfiles) {
         src: []
     };
 
-    for (let conf of profile.conf) {
+    for (let folder of profile.conf) {
 
-        let vals,start,end;
-
-        vals = conf.split("-");
-        start = parseInt(vals[0], 10);
-        end = (vals[1]==='n') ? 999 : parseInt(vals[1], 10);
-
-        console.log(start + '-' + end);
-
-        for (let j=start;j<=end;j++) {
+        for (let j=1;j<999;j++){
             let pro = profile.name;
             if (profile.name==='main') {
                 pro = 'portfolio';
             }
             try {
-                exportProfiles[profile.name].keys.push(j);
-                exportProfiles[profile.name].thumbnails.push(require(`./assets/thumbnails/${pro}/${pro}_${j}.jpg`));
-                exportProfiles[profile.name].src.push(`public/${pro}/${pro}_${j}.jpg`);
+                exportProfiles[profile.name].thumbnails.push(require(`./assets/thumbnails/${pro}/${folder}/${j}.jpg`));
+                exportProfiles[profile.name].src.push(`public2/${pro}/${folder}/${j}.jpg`);
+                exportProfiles[profile.name].keys.push(folder);
             } catch(error) {
                 break;
             }
         }
-
     }
 
 }
@@ -76,12 +71,14 @@ for (let i in displayProfiles) {
     let value = displayValues[i];
 
     for (let i in value.no) {
-        obj.thumbnails.push(require(`./assets/thumbnails/${pro}/${pro}_${i}.jpg`));
+        let pro = value.name[i];
+        if (pro==='main') {
+            pro = 'portfolio';
+        }
+        obj.thumbnails.push(require(`./assets/thumbnails/${pro}/${value.keys[i]}/${value.no[i]}.jpg`));
     }
 
     exportProfiles[displayProfiles[i]] = {...obj};
 }
-
-
 
 export default exportProfiles;

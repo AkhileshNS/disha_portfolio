@@ -15,8 +15,8 @@ let lorem_ipsom = `Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n\n 
 
 class Home extends Component {
 
-    log = () => {
-        this.props.history.replace('/shirtflirt');
+    pushPage = url => {
+        this.props.history.push(url);
     }
 
     render() {
@@ -28,21 +28,20 @@ class Home extends Component {
                 subtext={lorem_ipsom} 
                 images={config.shirtflirtdemo}
                 button="See More"
-                click={() => this.log()}
+                click={() => this.pushPage('/portfolio/shirtflirt')}
             />
             <Section
                 title="Portfolio"
                 images={config.portfoliodemo}
                 darken={true}
+                button="See More"
+                click={() => this.pushPage('/portfolio/main')}
             />
             <Section
-                title="About Me"
-                subtext={lorem_ipsom}
-            />
-            <Section
-                title="Clients"
-                images={config.clients}
-                darken={true}
+                title="Portraits"
+                images={config.portraits}
+                button="See More"
+                click={() => this.pushPage('/portfolio/black_and_white')}
             />
         </div>;
 

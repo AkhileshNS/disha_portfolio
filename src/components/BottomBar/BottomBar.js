@@ -31,7 +31,7 @@ class BottomBar extends Component {
 
         let path = this.props.location.pathname;
 
-        if (path==='/' || path==='/contact') {
+        if (path==='/contact') {
             BottomBarStyle['backgroundColor'] = '#F7F7F7';
         } else {
             BottomBarStyle['backgroundColor'] = '#F0F0F0';

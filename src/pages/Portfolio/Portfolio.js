@@ -72,14 +72,14 @@ class Portfolio extends Component {
                 darken={true}
                 width={this.state.width}                
             />
-            <Category 
+            <Category
                 title="Category Title"
                 subtext={lorem_ipsom}
                 button="See More"
-                click={() => this.loadCategory('brandcampaign')}
-                image={Config.category.thumbnails[2]}
+                click={() => this.loadCategory('shirtflirt')}
                 reverse={reversed[2]}
                 width={this.state.width}
+                image={Config.category.thumbnails[2]}
             />
         </div>;
     }
