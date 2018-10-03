@@ -23,7 +23,7 @@ const displayValues = [{
     no: [0,1,2]
 },{
     name: ['main','main','main','main','main','main','main','main','main'], 
-    no: [7,23,38,46,60,69,83,98]
+    no: [7,23,38,46,60,69,83,98,111]
 },{
     name: ['brandcampaign','brandcampaign','brandcampaign'], 
     no: [5,15,23]
@@ -35,6 +35,7 @@ const displayValues = [{
 for (let profile of importProfiles) {
 
     exportProfiles[profile.name] = {
+        keys: [],
         thumbnails: [],
         src: []
     };
@@ -55,6 +56,7 @@ for (let profile of importProfiles) {
                 pro = 'portfolio';
             }
             try {
+                exportProfiles[profile.name].keys.push(j);
                 exportProfiles[profile.name].thumbnails.push(require(`./assets/thumbnails/${pro}/${pro}_${j}.jpg`));
                 exportProfiles[profile.name].src.push(`public/${pro}/${pro}_${j}.jpg`);
             } catch(error) {
