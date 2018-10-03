@@ -9,7 +9,6 @@ let cssClassName = 'About';
 
 const About = (props) => {
     return <div className={cssClassName}>
-
     </div>;
 }
 

@@ -18,24 +18,14 @@ const Category = (props) => {
     let desc,bgcolor = '#F7F7F7';
     let srcUrl = lightGrid;
     let layout = [];
-    let alignment = 'end';
 
     if (props.darken===true) {
         bgcolor = '#f0f0f0';
         srcUrl = darkGrid;
     }
-
-    if (props.reverse) {
-        alignment = 'start';
-    }
-
-    if (props.width <= 768) {
-        alignment = 'center';
-    }
-
     desc = strtojsx(props.subtext, '\n', (e, i) => <br key={i}/>);
 
-    let content = <div className={cssClassName+'content'} style={{textAlign: alignment}} key={0}>
+    let content = <div className={cssClassName+'content'} key={0}>
         <div className={cssClassName+'container'}>
             <p className={cssClassName+'title'}>{props.title}</p>
             <p className={cssClassName+'subtext'}>{desc}</p>
@@ -66,8 +56,9 @@ const Category = (props) => {
     }
 
     return <div style={{backgroundColor: bgcolor}} className={cssClassName}>
+    <div>
         {layout}
-    </div>
+    </div></div>;
 }
 
 export default Category;

@@ -1,14 +1,23 @@
 .Category {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Category > div {
+    width: 100%;
+    max-width: 768px;
     padding: 16px 0px;
     display: inline-block;
-    margin-top: -4px;
-    margin-bottom: -4px;
+    margin: -4px auto;
+    display: flex;
 }
 
 .Categorycontent {
-    width: 60%;
-    float: left;
+    flex: 6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Categorycontainer {
@@ -18,15 +27,13 @@
 }
 
 .Categoryicon {
-    width: 40%;
-    float: left;
+    flex: 4;
     text-align: center;
 }
 
 .Categoryimg {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 16px auto;
 }
 
 .Categorytitle {
@@ -42,22 +49,23 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .Category > div {
+        flex-direction: column;
+    }
     .Categoryicon ,.Categorycontent {
         width: 100%;
-        clear: both;
+        flex: 1;
     }
-
+    .Categoryicon {
+        margin-top: 16px;
+    }
+    .Categorycontent {
+        margin-top: -32px;
+        margin-bottom: 32px;
+    }
     .Categorycontainer {
         margin-left: auto;
         margin-right: auto;
-    }
-
-    .Categorytitle {
-        padding-top: 25px;
-    }
-
-    .Categorysubtext {
-        padding-left: 0px;
     }
 
 }

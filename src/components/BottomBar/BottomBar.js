@@ -28,15 +28,6 @@ let InstaBtnStyle = {
 
 class BottomBar extends Component {
     render() {
-
-        let path = this.props.location.pathname;
-
-        if (path==='/contact') {
-            BottomBarStyle['backgroundColor'] = '#F7F7F7';
-        } else {
-            BottomBarStyle['backgroundColor'] = '#F0F0F0';
-        }
-
         return <div style={BottomBarStyle}>
             <img src={InstaImg} alt="Instagram" style={InstaBtnStyle} onClick={() => window.open('https://www.instagram.com/dishakhanted/?hl=en')}/>
         </div>;
