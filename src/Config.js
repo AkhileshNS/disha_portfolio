@@ -20,16 +20,16 @@ const exportProfiles = {};
 const displayProfiles = ['shirtflirtdemo','portfoliodemo','clients','category'];
 const displayValues = [{
     name: ['shirtflirt','shirtflirt','shirtflirt'], 
-    no: [0,1,2]
+    no: [1,2,3]
 },{
     name: ['main','main','main','main','main','main','main','main','main'], 
-    no: [7,23,38,46,60,69,83,98,111]
+    no: [8,24,39,47,61,70,84,99,112]
 },{
     name: ['brandcampaign','brandcampaign','brandcampaign'], 
-    no: [5,15,23]
+    no: [6,16,24]
 },{
     name: ['main','black_and_white','brandcampaign'],
-    no: [2,27,86]
+    no: [3,28,87]
 }];
 
 for (let profile of importProfiles) {
@@ -70,15 +70,13 @@ for (let profile of importProfiles) {
 
 for (let i in displayProfiles) {
     let obj = {
-        thumbnails: [],
-        src: []
+        thumbnails: []
     };
     
     let value = displayValues[i];
 
     for (let i in value.no) {
-        obj.thumbnails.push(exportProfiles[value.name[i]].thumbnails[value.no[i]]);
-        obj.src.push(exportProfiles[value.name[i]].src[value.no[i]]);
+        obj.thumbnails.push(require(`./assets/thumbnails/${pro}/${pro}_${i}.jpg`));
     }
 
     exportProfiles[displayProfiles[i]] = {...obj};
