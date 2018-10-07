@@ -13,6 +13,7 @@ import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 import ShowCase from './pages/ShowCase/ShowCase';
 import About from './pages/About/About';
+import Messages from './pages/Messages/Messages';
 
 //Internal Libraries
 
@@ -42,6 +43,7 @@ class App extends Component {
             <Route path='/contact' component={Contact} exact/>
             <Route path='/about' component={About} exact/>
             <Route path='/portfolio/:category' component={ShowCase} exact/>
+            <Route path='/messages' component={Messages} exact/>
           </Switch>
           <BottomBar />
         </div>

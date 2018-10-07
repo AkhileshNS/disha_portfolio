@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 // Internal Libraries
 import '../../global.css';
 import './Form.css';
+import firebase from '../../firebase';
 
 let cssClassName = 'Form';
 
@@ -28,6 +29,15 @@ class Form extends Component {
 
     contactMe = () => {
         // Contact Me Button was Pressed
+        let ref = firebase.database().ref().child('messages').push();
+        ref.set({
+            ...this.state,
+            date: `${new Date().getDate()}-${new Date().getMonth()}-${new Date()}`
+        }).then(() => {
+            alert('Message Successfully Sent');
+        }).catch(err => {
+            alert('Error Sending Message');
+        });
     }
 
     render() {
