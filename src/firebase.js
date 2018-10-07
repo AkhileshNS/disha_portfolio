@@ -3,13 +3,13 @@ import firebase from 'firebase/app';
 import 'firebase/storage';
 
 // Initialize Firebase
-let config = {
-    apiKey: "AIzaSyC2xFZGoue4Hhv79TNfd8aPLuerr6iT55c",
-    authDomain: "shoppinglistplusplus-nsa.firebaseapp.com",
-    databaseURL: "https://shoppinglistplusplus-nsa.firebaseio.com",
-    projectId: "shoppinglistplusplus-nsa",
-    storageBucket: "shoppinglistplusplus-nsa.appspot.com",
-    messagingSenderId: "845516663781"
+var config = {
+    apiKey: "AIzaSyApg6BJIsH38cBzt6IY5u5LwDqGzhYZ_bs",
+    authDomain: "dishakhantedportfolio.firebaseapp.com",
+    databaseURL: "https://dishakhantedportfolio.firebaseio.com",
+    projectId: "dishakhantedportfolio",
+    storageBucket: "dishakhantedportfolio.appspot.com",
+    messagingSenderId: "448363742705"
 };
 
 firebase.initializeApp(config);
