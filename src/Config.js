@@ -2,16 +2,20 @@
 const importProfiles = [
     { 
         name: 'black_and_white',
-        conf: [1]
+        conf: [1],
+        last: ['3']
     },{ 
         name: 'main',
-        conf: [1,2,3,4,5,6,7,8,9,10,11] 
+        conf: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        last: ['','','','','','2','','','','',''] 
     },{ 
         name: 'brandcampaign',
-        conf: [1] 
+        conf: [1],
+        last: [''] 
     },{ 
         name: 'shirtflirt',
-        conf: [1]
+        conf: [1],
+        last: ['']
     }
 ];
 
@@ -41,7 +45,8 @@ for (let profile of importProfiles) {
     exportProfiles[profile.name] = {
         keys: [],
         thumbnails: [],
-        src: []
+        src: [],
+        last: profile.last
     };
 
     for (let folder of profile.conf) {

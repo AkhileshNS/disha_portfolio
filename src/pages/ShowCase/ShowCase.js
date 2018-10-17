@@ -12,20 +12,7 @@ import config from '../../Config';
 
 let cssClassName = 'ShowCase';
 
-let images = {
-    black_and_white: {
-        link: config.black_and_white,
-        last: '2'
-    }, 
-    main: {
-        link: config.main,
-        last: ''
-    },
-    shirtflirt: {
-        link: config.shirtflirt,
-        last: ''
-    }
-};
+let images = {...config};
 
 class ShowCase extends Component {
 
@@ -47,9 +34,9 @@ class ShowCase extends Component {
 
     render() {
 
-        let Keys = images[this.props.match.params.category].link.keys;
-        let Thumbnails = images[this.props.match.params.category].link.thumbnails;
-        let Src = images[this.props.match.params.category].link.src;
+        let Keys = images[this.props.match.params.category].keys;
+        let Thumbnails = images[this.props.match.params.category].thumbnails;
+        let Src = images[this.props.match.params.category].src;
 
         let controller = null;
 

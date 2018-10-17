@@ -8,6 +8,7 @@ import firebase from '../../firebase';
 
 let cssClassName = 'Messages';
 
+// This is messages section
 class Messages extends Component {
 
     constructor(props) {

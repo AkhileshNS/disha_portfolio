@@ -47,7 +47,6 @@ class Gallery extends Component {
         } */
 
         let j = 0;
-        let k = 0;
 
         for (let i=0;i<check;i++) {
             layout.push([]);
@@ -62,12 +61,6 @@ class Gallery extends Component {
 
             if (j===check) {
                 j = 0;
-            }
-
-            if (this.props.last!=null){
-                if (i>((this.props.thumbnails.length-1) - this.props.last.length)) {
-                    j = (parseInt(this.props.last[k++],10) % 3);
-                }
             }
 
             if (this.props.LightBox===true) {
@@ -96,6 +89,32 @@ class Gallery extends Component {
                     onClick={() => this.openLightBox(i)}
                     style={Style}
                 />);
+            }
+        }
+
+        j--;
+
+        if (this.props.last!=null) {
+            let last = this.props.last;
+            let lastItems = [];
+            if ('currGroup' in this.props) {
+                last = this.props.last[this.props.currGroup-1];
+            }
+            for (let i=0;i<(last.length>3 ? 3 : last.length);i++){
+                if (j===-1){
+                    j = 2;
+                }
+                let layoutLastIndex = layout[j].length - 1;
+                lastItems.push(layout[j][layoutLastIndex]);
+                layout[j].pop();
+                j--;
+            }
+            lastItems = lastItems.reverse();
+            console.log(lastItems[0]);
+            for (let i in last){
+                let val = parseInt(last[i], 10) - 1;
+                layout[val].push(lastItems[i]);
+                lastItems.splice(0,1);
             }
         }
 
