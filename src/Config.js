@@ -6,7 +6,7 @@ const importProfiles = [
         last: ['3']
     },{ 
         name: 'main',
-        conf: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        conf: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11,12,13],
         last: ['','','','','','2','','','','',''] 
     },{ 
         name: 'brandcampaign',
