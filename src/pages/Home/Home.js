@@ -24,8 +24,7 @@ class Home extends Component {
         return <div className={cssClassName}>
             <img src={HomeBg} alt="Home Page" className={cssClassName + 'img'}/>
             <Section
-                title="Shirt Flirt" 
-                subtext={lorem_ipsom} 
+                title="#ShirtFlirtByDishaKhanted"
                 images={config.shirtflirtdemo}
                 button="See More"
                 click={() => this.pushPage('/portfolio/shirtflirt')}
@@ -38,7 +37,7 @@ class Home extends Component {
                 click={() => this.pushPage('/portfolio/main')}
             />
             <Section
-                title="Portraits"
+                title="Black and White Gallery"
                 images={config.portraits}
                 button="See More"
                 click={() => this.pushPage('/portfolio/black_and_white')}
