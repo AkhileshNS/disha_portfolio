@@ -98,11 +98,7 @@ class Gallery extends Component {
             let last = this.props.last;
             let lastItems = [];
             if ('currGroup' in this.props) {
-                if (this.props.currGroup < this.props.last.length){
-                    last = this.props.last[this.props.currGroup-1];
-                } else {
-                    last = [];
-                }
+                last = this.props.last[this.props.currGroup-1];
             }
             for (let i=0;i<(last.length>3 ? 3 : last.length);i++){
                 if (j===-1){
@@ -114,6 +110,7 @@ class Gallery extends Component {
                 j--;
             }
             lastItems = lastItems.reverse();
+            console.log(lastItems[0]);
             for (let i in last){
                 let val = parseInt(last[i], 10) - 1;
                 layout[val].push(lastItems[i]);

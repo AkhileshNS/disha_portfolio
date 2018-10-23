@@ -5,7 +5,7 @@ import React, {Fragment} from 'react';
 //Internal Libraries
 import '../../global.css'
 import './Section.css';
-import Gallery from '../Gallery/Gallery';
+import Gallery from '../FlexBoxGallery/Gallery';
 
 //Custom Imports
 const strtojsx = require('react-string-replace');

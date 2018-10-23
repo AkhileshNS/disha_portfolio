@@ -7,7 +7,9 @@ const importProfiles = [
     },{ 
         name: 'main',
         conf: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-        last: ['','','','','','2','','','','','','','','','','','','','',''] 
+        last: ['','','','','','2','','','','','','','','','','','','','',''],
+        titles: ['Title1','Title2','Title3','Title4','Title5','Title6','Title7','Title8','Title9','Title10','Title11','Title12','Title13',
+        'Title14','Title15','Title16','Title17','Title18','Title19','Title20'] 
     },{ 
         name: 'brandcampaign',
         conf: [1],
@@ -49,6 +51,10 @@ for (let profile of importProfiles) {
         last: profile.last
     };
 
+    if ('titles' in profile) {
+        exportProfiles[profile.name]['titles'] = profile.titles;
+    }
+
     for (let folder of profile.conf) {
 
         for (let j=1;j<999;j++){
@@ -87,3 +93,29 @@ for (let i in displayProfiles) {
 }
 
 export default exportProfiles;
+
+// Texts
+
+let texts = {
+    Home: {
+        titles: ['#ShirtFlirtByDishaKhanted','Themed Gallery','Monochrome Gallery']
+    },
+    Portfolio: {
+        titles: ['Themed Gallery','Monochrome Gallery','#ShirtFlirtByDishaKhanted'],
+        descs:[
+            '',
+            '',
+            ''
+        ]
+    },
+    About: {
+        title: 'Disha Khanted',
+        descs: [
+            'Photographer Disha Khanted spent the last couple of years photographing landscapes and people, when she found that her passion lies in portrait and fashion photography. It all began when she simply grabbed the camera lying in her home, and ventured out to shoot anything and everything that could be captured through a camera lens.',
+            'Starting off with small count of followers, the number has risen exponentially over a span of 2 years. Not only does she play the role of a photographer, but also the roles of an editor and a stylist. She is also self taught in the techniques of lighting, angles and settings.',
+            'Her network contains an extensive web of contacts with models, make-up artists and stylists. Disha now does freelance photo-shoots and also works with designers and models in Bangalore.'
+        ]
+    }
+}
+
+export {texts};

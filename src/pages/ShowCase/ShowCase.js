@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 
 // Internal Libraries
 import './ShowCase.css';
-import Gallery from '../../components/Gallery/Gallery';
+import Gallery from '../../components/FlexBoxGallery/Gallery';
 import Controller from '../../components/Controller/Controller';
 
 // Configuration Images
@@ -38,7 +38,7 @@ class ShowCase extends Component {
         let Thumbnails = images[this.props.match.params.category].thumbnails;
         let Src = images[this.props.match.params.category].src;
 
-        let controller = null;
+        let controller = null, title = null;
 
         let uniqueKeys = [];
         for (let key of Keys) {
@@ -49,10 +49,14 @@ class ShowCase extends Component {
 
         if (uniqueKeys.length!==1) {
             controller = <Controller groups={uniqueKeys} currGroup={this.state.currGroup} loadGroup={this.loadGroup} />;
+            if (this.state.currGroup < images[this.props.match.params.category].titles.length){
+                title = <p className={cssClassName+'title'}>{images[this.props.match.params.category].titles[this.state.currGroup - 1]}</p>;
+            }
         } 
 
         return <div className={cssClassName}>
             {controller}
+            {title}
             <Gallery
                 keys={Keys}
                 thumbnails={Thumbnails} 

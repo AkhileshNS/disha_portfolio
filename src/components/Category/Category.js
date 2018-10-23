@@ -23,7 +23,9 @@ const Category = (props) => {
         bgcolor = '#f0f0f0';
         srcUrl = darkGrid;
     }
-    desc = strtojsx(props.subtext, '\n', (e, i) => <br key={i}/>);
+    if ('subtext' in props && props.subtext!=='') {
+        desc = strtojsx(props.subtext, '\n', (e, i) => <br key={i}/>);
+    }
 
     let content = <div className={cssClassName+'content'} key={0}>
         <div className={cssClassName+'container'}>

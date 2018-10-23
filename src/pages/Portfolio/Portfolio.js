@@ -6,9 +6,8 @@ import React, {Component} from 'react';
 import './Portfolio.css';
 import '../../global.css';
 import Category from '../../components/Category/Category';
-import Config from '../../Config';
+import Config, {texts} from '../../Config';
 
-let lorem_ipsom = `Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n\n sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
 let reversed = [false,true,false];
 
 class Portfolio extends Component {
@@ -54,8 +53,8 @@ class Portfolio extends Component {
 
         return <div style={{width: '100%'}}>
             <Category 
-                title="Category Title"
-                subtext={lorem_ipsom}
+                title={texts.Portfolio.titles[0]}
+                subtext={texts.Portfolio.descs[0]}
                 button="See More"
                 click={() => this.loadCategory('main')}
                 image={Config.category.thumbnails[0]}
@@ -63,8 +62,8 @@ class Portfolio extends Component {
                 width={this.state.width}
             />
             <Category 
-                title="Category Title"
-                subtext={lorem_ipsom}
+                title={texts.Portfolio.titles[1]}
+                subtext={texts.Portfolio.descs[1]}
                 button="See More"
                 click={() => this.loadCategory('black_and_white')}
                 image={Config.category.thumbnails[1]}
@@ -73,8 +72,8 @@ class Portfolio extends Component {
                 width={this.state.width}                
             />
             <Category
-                title="Category Title"
-                subtext={lorem_ipsom}
+                title={texts.Portfolio.titles[2]}
+                subtext={texts.Portfolio.descs[2]}
                 button="See More"
                 click={() => this.loadCategory('shirtflirt')}
                 reverse={reversed[2]}
