@@ -71,9 +71,9 @@ class Gallery extends Component {
                 if (this.props.keys[i]===this.props.currGroup){
                     layout[j++].push(<img 
                         src={this.props.thumbnails[i]} 
-                        alt="Unavailable" 
+                        alt={this.props.currGroup + i} 
                         key={i} 
-                        className={cssClassName+'pic'} 
+                        alt={"Model" + this.props.currGroup + " Photo " + i} 
                         border="0"
                         onClick={() => this.openLightBox(i)}
                         style={Style}
@@ -82,7 +82,7 @@ class Gallery extends Component {
             } else {
                 layout[j++].push(<img 
                     src={this.props.thumbnails[i]} 
-                    alt="Unavailable" 
+                    alt={"Model" + this.props.currGroup + " Photo " + i} 
                     key={i} 
                     className={cssClassName+'pic'} 
                     border="0"
