@@ -46,7 +46,7 @@ class AppBar extends Component {
 
         return (
             <div className={cssClassName}>
-                <p className={cssClassName+'p'}>- DISHA KHANTED -</p>
+                <h2 className={cssClassName+'p'}>- DISHA KHANTED -</h2>
                 {links}
             </div>
         );

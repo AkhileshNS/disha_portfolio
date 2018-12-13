@@ -44,7 +44,7 @@ class Form extends Component {
 
         return <div className={cssClassName}>
             <div>
-                <p className={cssClassName+'title'}>Lets Work Together</p>
+                <h2 className={cssClassName+'title'}>Lets Work Together</h2>
                 <input 
                     className={cssClassName+'input'} 
                     placeholder="Name" 

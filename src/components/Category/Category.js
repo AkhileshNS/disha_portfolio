@@ -29,7 +29,7 @@ const Category = (props) => {
 
     let content = <div className={cssClassName+'content'} key={0}>
         <div className={cssClassName+'container'}>
-            <p className={cssClassName+'title'}>{props.title}</p>
+            <h2 className={cssClassName+'title'}>{props.title}</h2>
             <p className={cssClassName+'subtext'}>{desc}</p>
             <button className='button' onClick={props.click}>{props.button}</button>
         </div>

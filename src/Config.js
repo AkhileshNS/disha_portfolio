@@ -98,7 +98,8 @@ export default exportProfiles;
 
 let texts = {
     Home: {
-        titles: ['#ShirtFlirtByDishaKhanted','Themed Gallery','Monochrome Gallery']
+        titles: ['Welcome to my Gallery','#ShirtFlirtByDishaKhanted','Themed Gallery','Monochrome Gallery'],
+        descs: `Hi, I'm Disha and I've been taking Photos of Models in Bangalore for 2 years now and I've worked with almost 50 Models.\n\n It all started when me and my family went to Ooty a few years back and I was stuck there without Electricity or Television for three days. With nothing to keep me occupied, I grabbed the camera lying around in my home and ventured out to shoot anything and everything that could be captured through a camera lens.`
     },
     Portfolio: {
         titles: ['Themed Gallery','Monochrome Gallery','#ShirtFlirtByDishaKhanted'],
@@ -111,9 +112,9 @@ let texts = {
     About: {
         title: 'Disha Khanted',
         descs: [
-            'Photographer Disha Khanted spent the last couple of years photographing landscapes and people, when she found that her passion lies in portrait and fashion photography. It all began when she simply grabbed the camera lying in her home, and ventured out to shoot anything and everything that could be captured through a camera lens.',
-            'Starting off with small count of followers, the number has risen exponentially over a span of 2 years. Not only does she play the role of a photographer, but also the roles of an editor and a stylist. She is also self taught in the techniques of lighting, angles and settings.',
-            'Her network contains an extensive web of contacts with models, make-up artists and stylists. Disha now does freelance photo-shoots and also works with designers and models in Bangalore.'
+            `Hi, I'm Disha and I've spent the last couple of years photographing landscapes and people, when I found that my passion lies in portrait and fashion photography. It all started when me and my family went to Ooty a few years back and I was stuck there without Electricity or Television for three days. With nothing to keep me occupied, I grabbed the camera lying around in my home and ventured out to shoot anything and everything that could be captured through a camera lens.`,
+            `I started off with a small count of followers and now that number has risen exponentially over a span of 2 years. Not only do I take up the role of a photographer, but I also fill out the roles of an editor and a stylist. I've also taught myself in the techniques of lighting, angles and settings.`,
+            'I now have a network containing an extensive web of contacts with models, make-up artists and stylists (A long way from when I first started) and I now mostly do freelance photo-shoots of models and also work with designers in Bangalore.'
         ]
     }
 }

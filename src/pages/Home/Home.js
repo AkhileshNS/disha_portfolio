@@ -21,22 +21,29 @@ class Home extends Component {
 
         return <div className={cssClassName}>
             <img src={HomeBg} alt="Home Page" className={cssClassName + 'img'}/>
-            <Section
+            <Section 
                 title={texts.Home.titles[0]}
+                subtext={texts.Home.descs}
+                button="Read More"
+                click={() => this.pushPage('/about')}
+            />
+            <Section
+                title={texts.Home.titles[1]}
                 images={config.shirtflirtdemo}
+                darken={true}
                 button="See More"
                 click={() => this.pushPage('/portfolio/shirtflirt')}
             />
             <Section
-                title={texts.Home.titles[1]}
+                title={texts.Home.titles[2]}
                 images={config.portfoliodemo}
-                darken={true}
                 button="See More"
                 click={() => this.pushPage('/portfolio/main')}
             />
             <Section
-                title={texts.Home.titles[2]}
+                title={texts.Home.titles[3]}
                 images={config.portraits}
+                darken={true}
                 button="See More"
                 click={() => this.pushPage('/portfolio/black_and_white')}
             />

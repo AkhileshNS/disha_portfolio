@@ -18,7 +18,7 @@ const Section = (props) => {
     let title, subtext, gallery, button,icon,contactdetails,layout,bgcolor = '#F7F7F7';
 
     if (props.title!=null) {
-        title = <p className={cssClassName+"title"}>{props.title}</p>
+        title = <h2 className={cssClassName+"title"}>{props.title}</h2>
     }
 
     if (props.subtext!=null) {
