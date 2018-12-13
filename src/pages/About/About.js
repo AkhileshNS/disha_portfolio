@@ -4,7 +4,7 @@ import React from 'react';
 
 // Internal Libraries
 import './About.css';
-import selfie from '../../assets/Disha_pic.png';
+import selfie from '../../assets/Disha-Khanted.png';
 import {texts} from '../../Config';
 
 let cssClassName = 'About';

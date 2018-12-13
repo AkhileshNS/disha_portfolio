@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 //Internal Libraries
 import '../../global.css';
 import './Home.css';
-import HomeBg from '../../assets/Home_Bg.png';
+import HomeBg from '../../assets/Fashion-and-Model-Photography-in-Bangalore.png';
 import Section from '../../components/Section/Section';
 import config, {texts} from '../../Config';
 
@@ -20,7 +20,7 @@ class Home extends Component {
     render() {
 
         return <div className={cssClassName}>
-            <img src={HomeBg} alt="Home Page" className={cssClassName + 'img'}/>
+            <img src={HomeBg} alt="Fashion and Model Photography in Bangalore" className={cssClassName + 'img'}/>
             <Section 
                 title={texts.Home.titles[0]}
                 subtext={texts.Home.descs}
