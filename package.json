@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "^5.5.0",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "npm": "^6.13.4",
     "radium": "^0.24.1",
     "react": "^16.4.2",
